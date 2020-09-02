@@ -12,17 +12,21 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::prefix('Rifani')->group(function () {
+
+
+	Route::prefix('admin')->group(function () {
 	Route::get('/Fani', function () {
     return view('welcome');
 	});
 
-	Route::get('/Latihan', function () {
-    echo "1. Latihan awal";
-    echo '<p>Awal memahami route pada laravel</p>';
+	Route::get('/Coba', function () {
+    echo '<h1 style="text-align: center"><u>Selamat datang di kelas XII RPL 1</u></h1>';
+	});
+	
+    Route::get('/{nama}', function ($nama) {
+	    echo $nama;
 	});
 
-	Route::redirect('/contact-us', '/Fani');
 });
 
 Route::fallback( function () {
